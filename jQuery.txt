@@ -1,0 +1,543 @@
+$(document).ready(function(){  }); 运行核心 文档初始加载  简写:  $()
+
+$("标签").css("属性名","属性值");
+示例:
+$("h3").css("background","#09F"); 
+等价于
+document.getElementsByTagName("h3").style.background
+.css()			css样式
+.show()  		显示
+.hide()   		隐藏
+.click()  		点击执行
+.is()     		判断(是否)
+.text()			标签内容(只能替换文本)
+.addClass()		增加Class类
+.removeClass()		删除类
+.val() 			修改value内容
+.html()			标签内容(<===>document.getElementById(“id”).innerHTML)(可以替换标签和文本)
+.each()			为每个匹配元素运行指定函数，隐形迭代
+.toggle()		开关,切换(1.8版本)
+.toggleClass()		是否有类名,有就移除，没有就添加
+.live()			新增类的节点自动绑定事件	1.8版本 1.11删除
+.on()			事件执行交给当前元素的上级执行	1.11以上 
+.hover()		鼠标移入移出事件集合
+.one()			事件只执行一次然后删除
+.trigger()		模拟操作
+.find() 		被选元素的后代元素，一路向下直到最后一个后代。
+.index()		指定元素相对于其他同级元素的 index(从0开始) 位置。
+.hasClass()		是否有类
+.size()			获取长度 1.11删除 
+.resize()		尺寸改变时触发
+.scroll()		事件会在元素的滚动条位置发生改变时触发。
+.length()		1.11添加 替代size
+$(this).scrollTop();   	当前窗口的滚动距离
+.offset() 		方法返回或设置匹配元素相对于文档的偏移（位置）。
+$(选择器).offset().top	当前元素距顶部距离
+.serialize()   		序列化输出表单值
+.off()			移除元素上绑定的一个或多个事件的事件处理函数。
+.delay()		对队列中的下一项的执行设置延迟。
+.not()			返回不符合一定条件的元素。
+.unload()		事件会在页面退出时触发。
+.error()		事件会在js发生错误或资源加载失败时触发。
+
+事件按触发方式分类
+-鼠标：
+click		 (单击) 
+dblclick	（双击）  
+mousemove	（鼠标移动）   
+mousedown	（鼠标按下）  
+mouseup		（鼠标抬起）  
+mouseover	 (鼠标移入一个区域）  
+mouseout	（鼠标移出一个区域）
+.mouseenter()	 鼠标穿过 (与鼠标移入一样，鼠标移入子元素也会被触发，穿过子元素不会被触发)
+.mouseleave()	 鼠标穿出（与鼠标移出一样，鼠标移入子元素也会被触发，穿出子元素不会被触发）
+
+-键盘：
+keydown        （键盘按下）   
+keyup		（键盘抬起）   
+keypress	（按一次键）
+
+-其他：
+load		（文档加载）     
+unload		（文档卸载）     
+submit		（表单提交）
+focus		（获得焦点）     
+blur		（失去焦点）
+focusin		 事件就是获得焦点事件。与focus事件不同的是：focusin可以检测该元素的后代元素获得焦点的情况(换句话说，focusin事件支持冒泡)。
+focusout	 事件就是失去焦点事件。与blur事件不同的是：focusout可以检测该元素的后代元素获得焦点的情况(换句话说，focusout事件支持冒泡，blur不支持)。       
+select		（选中文本）    
+change		（文本或选项改变）   
+paste		（粘贴）   
+contextmenu()	（右键上下文）  
+reset		（重置）
+
+$(window).resize()		 对浏览器窗口调整大小时执行
+$(window).scroll()		 浏览器滚动时执行
+
+$(window).height() 			//浏览器当前窗口可视区域高度   
+$(document).height()			//浏览器当前窗口文档的高度   
+$(document.body).height()		//浏览器当前窗口文档body的高度   
+$(document.body).outerHeight(true)	//浏览器当前窗口文档body的总高度 包括border padding margin   
+$(window).width())			//浏览器当前窗口可视区域宽度   
+$(document).width()			//浏览器当前窗口文档对象宽度   
+$(document.body).width()		//浏览器当前窗口文档body的高度   
+innerWidth()				//返回元素的宽度（包含 padding）
+innerHeight()				//返回元素的高度（包含 padding)
+$(document.body).outerWidth(true)	//浏览器当前窗口文档body的总宽度 包括border padding margin  
+
+attr()			获取和设置属性 
+removeAttr()		删除属性  
+addClass() 		添加样式 
+removeClass()		删除样式 	
+.siblings()		获取兄弟元素  
+.children()		用于获取指定元素下的子元素集合。(只考虑子元素，不考虑后代元素）		
+.next()			用于获取匹配元素后面紧邻的同辈元素。
+.prev()			取得指定元素前面紧邻的同辈元素。
+.parent(selector)	获取元素的父级元素
+.parents(selector)	元素元素的祖先元素
+
+插入节点
+append()		向元素内部添加内容
+appendTo()		将内容追加到指定的内容
+
+prepend()		在指定元素内容前增加内容
+prependTo()		将内容增加到指定元素内容前
+
+after()			在匹配的元素后加入内容
+insertAfter()		将内容加入到匹配元素后
+
+before()		在匹配的元素之前加入内容
+insertBefore()		将内容加入到匹配的元素之前
+
+删除节点
+remove()       		删除指定的元素，后代节点也会删除。返回值是一个指向已被删除的节点的引用,重新追加此节点，原绑定事件失效
+detach()		删除指定元素，重新追加此节点，但其绑定的事件、附加的数据都会保留下来
+empty()			清空元素中的所有后代节点
+
+复制节点
+clone()			可以实现复制节点，但该方法所生成的节点不会触发相应的事件。
+clone(true)		实现复制节点，使用新复制的节点具有原节点相同的事件。
+
+替换节点
+replaceWith()
+$(“p”).replaceWith(“<b>hello world!</b>”);
+	将页面中的所有p元素替换为<b>hello world!</b>，注意是每一个匹配的p都会被替换。
+replaceAll()
+$(“<b>Hello World!</b>”).replaceAll(“p”)
+	将页面中的所有p元素用<b>Hello World!</b>替换。同样也是每一个匹配项都会被替换。
+
+
+$("父元素").on("事件","事件元素",函数)
+举例$("table").on("click",".del",function(){$(this).parent().parent().remove();})
+
+
+
+event对象的属性
+type			获取这个事件的事件类型，
+target			获取绑定事件的DOM元素
+data			获取事件调用时的额外数据
+relatedTarget		获取移入移出目标点离开或进入的那个DOM元素
+currentTarget		获取冒泡前触发的DOM元素，等同于this
+pageX/pageY		获取相对于页面原点的水平/垂直坐标
+result			获取上一个相同事件的返回值
+timeStamp		获取事件触发的时间戳
+
+阻止事件冒泡：event.stopPropagation();
+
+阻止默认行为： e.preventDefault()；//右键系统菜单、单击超链接跳转、单击“提交”按钮提交数据
+
+使用return false同时阻止默认行为和冒泡
+$(“a”).click(function(e){  return false;})
+
+常量
+const 常量名（大写）= 数值  		常量在程序运行中不可以修改 
+
+在jquery中的input标签具有defaultValue属性，表示默认值。
+
+
+
+AJAX
+$.ajax({
+	type: "post",  //get   
+	url: "",  //html  txt  xml  php  jsp 
+	data: ""+src+""  , //传给服务器的数据
+	dataType:"",
+	success: function(data){  //data存返回数据
+
+	}
+});
+
+动画效果
+
+控制显示和隐藏
+show()       		毫秒“fast”:200	“normal”:400	“slow”:600
+hide()		 	
+toggle()		开关（点一下显示，点一下隐藏）
+
+控制不透明度
+fadeIn()	
+fadeOut()
+fadeToggle()
+fadeTo()		//$(“div”).fadeTo(“fast”,”0.2”);
+
+控制高度
+slideUp()
+slideDown()    
+slideToggle()
+
+.animate({属性：'属性值',属性：'属性值'},时间,回调函数) 	自定义动画效果
+
+
+停止动画stop([clearQueue],[gotoEnd])
+stop(false)方法：停止当前正在进行的动画，以当前状态开始队列中接下来的动画。
+stop(true)方法：清空动画队列。
+gotoEnd：到达当前动画的末状态，而非队列的末状态。
+两个参数均为布尔值，默认为false
+
+if(!("#element”)).is(“:animated”)){
+    //如果当前没有进行动画，则添加新动画……}
+
+finish()会停止当前正在运行的动画，删除所有队列中的动画，并完成匹配元素的所有动画。
+
+jqZoom插件简介
+插件参数：
+lens值为布尔值，表示是否显示小图片中的选中区域，默认值为"true",如果设为"false"，则放大后的图片上面不会出现主题字样。
+imageOpacity参数是当zoomType的值为"reverse"时，用来设置非选中区域透明度的值。取值范围在(0.0-1.0)间。
+preloadImages值为布尔值，表示是否重新加载大图像。
+preloadText是重新加载大图像时，小图像显示的文本说明。
+title是指大图像顶部是否显示<a>标签里的title。
+showEffect是大图像加载时的特效，可选值:“show”表示直接显示，“fadein”由透明度渐变载入效果。
+hideEffect是大图像隐藏特效，可选值"hide"表示直接隐藏，"fadeout"透明度渐变隐藏。　　
+fadeinSpeed是当大图像的载入特效设为"fadein"时，此属性可设置特效的时间，可选值为'fast','slow',number分别代表，快慢，毫秒数。
+fadtoutSpeed是当大图像的隐藏特效设为"fadeout"时，此属性可设置特效载的时间，可选值为'fast','slow',number分别代表，快慢，毫秒数。
+
+
+
+jQuery.inArray()函数用于在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。
+	w( $.inArray( 搜索值, 数组名 ) ); 
+
+使用jQuery.each()函数迭代对象或数组，jQuery示例代码如下：
+
+	// 遍历数组元素
+	$.each( [1, 2, 3] , function(i, item){
+   		 alert("索引=" + i + "; 元素=" + item);  
+	} );
+
+	// 遍历对象属性
+	$.each( { name: "张三", age: 18 } , function(property, value){
+   	 	alert("属性名=" + property + "; 属性值=" + value);    
+	} );
+
+	var array = [];
+	array[2] = "Code";
+	array[4] = "Player";
+	// 会遍历索引为0、1、2、3、4的元素，其中0、1、3的元素是undefined
+	$.each( array , function(i, item){
+    		alert("索引=" + i + "; 元素=" + item);  
+	} );
+
+jQuery.each()函数同样可以遍历jQuery对象中匹配的元素，以下面这段HTML代码为例：
+	<div id="n1">
+    		<div id="n2">
+        		<ul id="n3">
+           			 <li id="n4">item1</li>
+            			<li id="n5">item2</li>
+           			 <li id="n6">item3</li>
+        		</ul>
+    		</div>  
+	</div>
+
+	$.each( $("ul li"), function(index, element){
+    		// this === element
+    		$(element).html( "编号" + (index + 1) );  
+	});
+
+jQuery.contains()函数用于判断指定元素内是否包含另一个元素。
+
+	<div id="n1">
+    		<p id="n2">
+        		<span id="n3">CodePlayer</span>
+    		</p>
+	</div>
+	<p id="n4">专注于编程开发技术分享</p>
+
+	//在当前页面内追加换行标签和指定的HTML内容
+	function w( html ){
+    		document.body.innerHTML += "<br>" + html;
+	}
+	var n1 = document.getElementById("n1");
+	var n2 = document.getElementById("n2");
+	var n3 = document.getElementById("n3");
+	var n4 = document.getElementById("n4");
+	var span = document.getElementsByTagName("span");
+	// n1包含n2
+	w( $.contains(n1, n2) ); // true
+	// n1包含n3
+	w( $.contains(n1, n3) ); // true
+	// n1不包含n4
+	w( $.contains(n1, n4) ); // false
+	// n1虽然包含span元素(n3)，但变量span是NodeList对象，不是Element类型。
+	w( $.contains(n1, span) ); // false
+
+jQuery.extend()函数用于将一个或多个对象的内容合并到目标对象。
+
+	//在当前页面内追加换行标签和指定的HTML内容
+	function w( html ){
+    	document.body.innerHTML += "<br/>" + html;
+	}
+
+
+	var x = { name:"CodePlayer" };
+	var y = { age: 18 };
+	var z = { site: "www.365mini.com"  };
+
+	// y和z的属性将被合并复制到对象x上
+	var obj = $.extend( x, y, z );
+	w( obj === x ); // true
+	w( obj.name ); // CodePlayer
+	w( obj.age ); // 18
+	w( obj.site ); // www.365mini.com
+
+jQuery.globalEval()函数用于全局性地执行一段JavaScript代码。
+
+	var name = "全局变量";
+
+	function test(){
+    		var name = "局部变量";
+    
+   		 alert(name); // 局部变量
+    
+    		eval( "alert(name);" ); // 局部变量
+    
+   		 $.globalEval( "alert(name);" );  // 全局变量
+	}
+
+	test();
+
+jQuery.grep()函数用于使用指定的函数过滤数组中的元素，并返回过滤后的数组。
+
+	/在当前页面内追加换行标签和指定的HTML内容
+	function w( html ){
+    		document.body.innerHTML += "<br/>" + html;
+	}
+
+
+	var arr = [ 10, 25, 3, 0, -3 , 20, 6, 8, 11 ];
+
+	function filter(value, index){
+    		return value > 10;
+	}
+
+	var result = $.grep( arr, filter );
+	// 保留了所有大于10的元素
+	w( result ); // 25,20,11
+
+	var result2 = $.grep( arr, filter, true );
+	// 保留了所有不大于10的元素
+	w( result2 ); // 10,3,0,-3,6,8
+
+jQuery.isArray()函数用于判断指定参数是否是一个数组。该函数属于全局jQuery对象。
+	//在当前页面内追加换行标签和指定的HTML内容
+	function w( html ){
+    		document.body.innerHTML += "<br/>" + html;
+	}
+
+
+
+	w( $.isArray( [ 10, 25, 3 ] ) ); // true
+	w( $.isArray( new Array() ) ); // true
+
+
+	w( $.isArray( null ) ); // false
+	w( $.isArray( true ) ); // false
+	w( $.isArray( { } ) ); // false
+
+	var obj = { };
+	obj[0] = 10;
+	obj[1] = 25;
+	obj[2] = 3;
+	obj.length = 3;
+	// obj是一个类数组对象，但它仍然不是一个真正的数组
+	w( $.isArray( obj ) ); // false
+
+jQuery.isNumeric()函数用于判断指定参数是否是一个数字值。
+
+	//在当前页面内追加换行标签和指定的HTML内容
+	function w( html ){
+    		document.body.innerHTML += "<br/>" + html;
+	}
+	w( $.isNumeric( 12 ) ); // true
+	w( $.isNumeric( 12.35 ) ); // true
+	w( $.isNumeric( "12" ) ); // true
+	w( $.isNumeric( "12.34" ) ); // true
+	// 十六进制
+	w( $.isNumeric( "0x123" ) ); // true
+	w( $.isNumeric( new Number( 12 ) ) ); // true
+
+	w( $.isNumeric( null ) ); // false
+	w( $.isNumeric( true ) ); // false
+	w( $.isNumeric( "CodePlayer" ) ); // false
+	w( $.isNumeric( { } ) ); // false
+	w( $.isNumeric( [ 0 ] ) ); // false
+	w( $.isNumeric( NaN ) ); // false
+
+
+jQuery.parseJSON()函数用于将格式完好的JSON字符串转为与之对应的JavaScript对象。
+
+
+	var result1 = $.parseJSON( "{}" ); // 一个空的Object对象
+
+	var result2 = $.parseJSON( '{ "name": "CodePlayer", "age": 1 }' ); // 一个Object对象
+		alert( result2.name ); // CodePlayer
+
+	var result3 = $.parseJSON( '[ 1, true, "CodePlayer" ]' ); // 一个Object对象
+		alert( result3[2] ); // CodePlayer
+
+	var result4 = $.parseJSON( 'true' ); // 布尔值：true
+
+	var result5 = $.parseJSON( 'null' ); // null
+
+	var result6 = $.parseJSON( '0' ); // 整数：0
+
+	var result7 = $.parseJSON( '"专注于编程开发技术分享"' ); // 字符串值：专注于编程开发技术分享
+
+	var result8 = $.parseJSON( "\"专注于编程开发技术分享\"" ); // 字符串值：专注于编程开发技术分享
+
+
+/* 以下均是无效的JSON字符串或非常规的参数值 */
+
+/*
+	var result9 = $.parseJSON( 100 );  // 1.9之前返回null；1.9+返回100
+	var result10 = $.parseJSON( 1.23 );  // 1.9之前返回null；1.9+返回1.23
+	var result11 = $.parseJSON( true );  // 1.9之前返回null；1.9+返回true
+	var result12 = $.parseJSON( null );  // 返回null
+
+	var result13 = $.parseJSON( "" ); // 1.9之前返回null；1.9+抛出错误
+	var result14 = $.parseJSON( undefined );  // 1.9之前返回null；1.9+抛出错误
+
+	var result15 = $.parseJSON( "undefined" ); // 抛出错误
+	var result16 = $.parseJSON( "12x;xx'无效的JSON字符串x4546" ); // 抛出错误
+	var result17 = $.parseJSON( '{ name: "CodePlayer", age: 1 }' ); // 抛出错误
+	var result18 = $.parseJSON( '{ "name": \'CodePlayer\', "age": 1 }' ); // 抛出错误
+	var result19 = $.parseJSON( '{ "name": "Code\tPlayer\n" }' ); // 抛出错误
+*/
+
+
+jQuery.parseXML()函数用于将字符串解析为对应的XML文档。
+
+	//在当前页面内追加换行标签和指定的HTML内容
+	function w( html ){
+    		document.body.innerHTML += "<br/>" + html;
+	}
+
+	var xmlStr = '<?xml version="1.0" encoding="UTF-8"?>';
+	xmlStr += '<user>';
+	xmlStr += '<username>CodePlayer</username>';
+	xmlStr += '<age>18</age>';
+	xmlStr += '</user>';
+
+	var xmlDoc = $.parseXML( xmlStr );
+	$xml = $( xmlDoc );
+
+	var username = $xml.find("username").text();
+	w( username ); // CodePlayer
+
+	var $age = $xml.find("age");
+	w( $age.text() ); // 18
+
+	$age.text("20");
+	w( $age.text() ); // 20
+pageX属性用于返回鼠标指针相对于当前文档左边缘的位置。
+
+	// 显示鼠标指针在文档中的当前坐标位置
+	$(document).bind("mousemove", function(event){
+   		 $("#message").text('当前鼠标坐标:(' + event.pageX + ', ' + event.pageY + ')');
+	});
+
+
+event对象的属性
+type			获取这个事件的事件类型，
+target			获取绑定事件的DOM元素
+data			获取事件调用时的额外数据
+relatedTarget		获取移入移出目标点离开或进入的那个DOM元素
+currentTarget		获取冒泡前触发的DOM元素，等同于this
+pageX/pageY		获取相对于页面原点的水平/垂直坐标
+result			获取上一个相同事件的返回值
+timeStamp		获取事件触发的时间戳
+
+event对象的属性
+result属性用于返回本次事件触发执行的上一个事件处理函数的返回值。
+
+$("#myForm").submit( function(event) {
+    // 如果前面的表单验证返回false，无法继续验证，直接返回false
+    if( event.result === false){
+        return false;
+    }
+
+event对象的属性
+target属性用于返回最初触发事件的DOM元素。
+	请参考下面这段HTML示例代码：
+
+	<div id="n1" style="height: 100px; background: #eee;" >
+   		 <p id="n2" style="background: #999;" >段落文本...段落文本...<br>
+        		<span id="n3" style="background: #fff;" >专注于编程开发技术分享</span>
+    		</p>
+	</div>
+
+	$("div").click( function(event) {
+		alert("最初触发事件的是:" + event.target.tagName + "#" + event.target.id);	
+	} );
+	// 点击span元素区域，弹出："最初触发事件的是:SPAN#n3"
+	// 点击p元素自身区域，弹出："最初触发事件的是:P#n2"
+	// 点击div元素自身区域，弹出："最初触发事件的是:DIV#n1"
+
+event对象的属性
+type属性用于返回当前触发事件的事件类型。
+
+	<div id="n1" style="height:100px; border: 1px solid #999;" ></div>
+	<input id="n2" name="uname" type="text" /><span id="msg"></span>
+
+	// 为n1绑定mouseenter和mouseleave事件
+	// 鼠标移入时，边框变为蓝色；鼠标移出时，边框变为原来的颜色(#999)
+	$("#n1").bind("mouseenter mouseleave", function(event){
+    		if(event.type == "mouseenter"){
+       			 $(this).css("borderColor", "blue");
+   		 }else{
+        		$(this).css("borderColor", "#999");
+   		 }
+	});
+
+	// 为文本框n2绑定focus和blur事件
+	// 获取焦点时，显示相应的提示信息
+	// 失去焦点时，进行表单验证，并显示相应的提示信息
+	$("#n2").bind("focus blur", function(event){
+    		var $msg = $("#msg");
+    		if(event.type == "focus"){
+       			 $msg.html( '请输入用户名!' );
+        		 $msg.css("color", "blue");
+   		 }else{
+        		if( !this.value ){
+           			 $msg.html( '用户名不能为空!' );
+           			 $msg.css("color", "red");
+        		}else{
+           			 $msg.html( '输入正确!' );
+           			 $msg.css("color", "green");
+       			 }
+   		 }
+	});
+
+
+
+jQuery Mobile
+长按taphold
+ $("元素").on("taphold",function(){
+    $(this).hide();
+  });  
+swipe 滑动
+swipeleft	左滑动
+swiperight	右滑动
+tap		点击
+scrollstart	开始滚动
+scrollstop	结束滚动
+
+

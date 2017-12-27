@@ -1,0 +1,117 @@
+文件名	说明
+reset.css	重置样式，重置元素默认样式
+global.css	全局样式，全站公用，定义页面基础样式
+themes.css	主题样式，用于实现换肤功能
+module.css	模块样式，用于模块的样式
+master.css	母版样式，用于母版页的样式
+columns.css	专栏样式，用于专栏的样式
+forms.css	表单样式，用于表单的样式
+mend.css	补丁样式，用于维护，修改的样式
+print.css	打印样式，用于打印的样式
+
+
+网页部分    	命名部分
+最外层	    	wrapper
+头部	    	header
+内容	    	content
+侧栏	    	sidebar
+栏目	    	column
+热点	    	hot
+新闻	    	news
+下载	    	download
+标志	    	logo
+导航条	    	nav
+主体	    	main
+左侧	    	main-left
+右侧	    	main-right
+底部	    	footer
+友情链接    	friendlink
+版权	   	copyright
+服务	    	service
+登录	    	login
+注册	    	register
+联系我们    	Contact us
+关注	    	follow
+互动	    	interaction
+安全	    	safety
+主导航	    	main-nav
+子导航	    	sub-nav
+边导航	    	side-nav
+左导航	    	leftside-nav
+右导航	    	rightside-nav
+顶导航	    	top-nav
+菜单	    	menu
+子菜单	    	submenu
+小技巧	    	tips
+图标	    	icon
+法律声明    	siteinfolegal
+网站地图    	sitemap
+工具条	    	tool
+首页	    	homepage
+子页	    	subpage
+合作伙伴    	parter
+帮助	    	help
+指南	    	guide
+滚动	    	scroll
+提示信息    	msg
+投票	    	vote
+相关文章    	related
+文章列表    	list
+标题	    	title
+摘要	    	summray
+登录条	   	loginbar
+搜索	    	search
+标签页	    	tab
+广告	    	banner
+
+
+性别        	sex
+上传        	upload
+照片        	pic
+信息        	info
+用户名      	username
+年龄        	age
+添加时间    	add_time
+分数        	score
+住址        	dress 
+邮箱        	mail   
+图片地址    	pic_url
+图片来源    	pic_source
+图片信息    	pic_info
+资源        	resource
+目标        	target
+计算圆的面积    compCircleArea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

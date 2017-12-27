@@ -1,0 +1,112 @@
+目前最为流行的网络架构方式：LAMP
+LAMP->(liinux+Apache+MySQL+php)WAMP
+L:linux操作系统（windows（民用图形化）/unix(军用：纯代码）:linux)
+A:Apache作为服务器（阿帕奇）
+M:MySQL作为数据库
+P:php作为服务端运行的脚本语言
+
+地址：localhost/phpmyadmin
+
+数据库解析类型   utf8_general_ci
+
+INT		整型
+VARCHAR		字符型  数值50
+DATETIME        日期型
+
+CURD操作（增create/改update/查read/删delete）
+
+添加数据:insert into 表名称 (字段值,字段值) values(数值,数值);                           insert into biao () values();
+删除数据:delete from 表名称 where(过滤) id='id号'                                        delete from biao where id='2';
+修改数据:update 表名称 set(设置) 字段='字段值',字段='字段值' where(过滤) id='id号'       update biao set score='60',age='38' where id='3';
+查询数据:select *(*代表所有字段/也可以写单独字段) from 表名称 where(过滤) 字段='字段值'  select * from biao where age='18';
+
+使用where子句，需要使用一些比较运算符:
+=	等于
+>	大于
+<	小于
+>=	大于等于
+<=	小于等于
+！=(<>)     不等于
+or	或者
+and   	并且
+
+三个关键字:between/in/like
+
+not between..and..  不在两者之间：select * from 表名 where age not between 1 and 50(包括1和50）
+
+between..and..      在两者之间:select *from 表名 where age between 1 and 50(包括1和50）
+
+in                  在具体范围里:select * from 表名 where id in (9,13,18)
+
+not in  	    不在具体范围里:select * from 表名 where id not in (9,13,18)
+
+like                模糊查询：select * from 表名 where 字段 like '%字'  %代表未知
+
+not like            模糊查询:select * from 表名 where 字段 not like '字%' or 字段 not like '字%' 
+
+
+
+常用统计函数：仅用于数字字段（int型）
+sum(字段) 指定字段所有的和   select sum(age) from 表名     查询所有年龄的总和
+
+min(字段) 指定字段的最小值   select min(score) from 表名   查询分数最低的名字
+
+max(字段) 指定字段的最大值   select max(score) from 表名   查询分数最高的名字
+
+avg(字段) 指定字段的平均值   select avg(age) from 表名     查询库中平均年龄是多少  
+
+count(字段)查询数据库中的总条数 select count(*/单个字段) from 表名
+
+
+对结果进行排序:order by（升序asc 降序desc）
+select * from 表名 order by 字段 asc/desc
+
+限定结果行数:limit (分页效果的关键字)
+limit子句可以对查询结果的记录条数进行限定，控制它的输出条数
+limit后可放1个值，也可放2个值
+select * from 表名 limit 3           只取结果的前三条
+select * from 表名 limit 0,3         (第1个数代表索引值：比实际顺序小1)从哪开始取，取几条
+
+注意：当where/order/limit同时出现:where order limit （顺序不能变）
+例子:select * from 表名 where id!=3 order by 字段 dasc limit 2,3  （id不等于3倒序排列从第三条开始，取三条）
+
+查询时满足的第二个条件:having
+where子句是第一层过滤，having是第二层过滤，不可颠倒写
+select * from 表名 where score between 60 and 80 having sex ='女' （分数60-80之间并且是女性）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

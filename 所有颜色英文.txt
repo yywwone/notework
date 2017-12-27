@@ -1,0 +1,83 @@
+绿：green                                  khaki  卡其色
+红：red					maroon  褐红色，栗色
+蓝：blue
+黑：black
+灰：grey
+黄：yellow
+紫：purple
+白：while
+棕：brownamber  琥珀色   
+antique violet  古紫色
+aquamarine blue  蓝绿色
+baby pink  浅粉红色
+beige  灰褐色
+blue  蓝色
+brown  褐色, 茶色
+camel  驼色
+charcoal gray  炭灰色
+chocolate  红褐色, 赭石色
+cobalt blue  钴蓝色, 艳蓝色
+emerald green  鲜绿色,祖母绿
+gray  灰色
+green  绿色
+ivory  象牙色
+khaki  卡其色
+lavender  淡紫色, 熏衣草花
+lilac  浅紫色，丁香
+maroon  褐红色，栗色
+mauve  淡紫红
+misty gray  雾灰色
+moss green  苔绿色
+navy blue  藏青色, 深蓝色, 天蓝色
+off-white  灰白色
+olive green  橄榄绿
+oyster white  乳白色
+pansy  紫罗兰色
+pink  粉红色
+purple, violet  紫色
+red  红色
+salmon pink  橙红色
+sandy beige  浅褐色
+scarlet  绯红, 猩红
+shocking pink  鲜粉红色
+smoky gray  烟灰色
+snowy white  雪白色
+turquoise blue  土耳其玉色
+white  白色
+wine red  葡萄酒红
+mauve 淡紫红
+misty gray 雾灰色
+moss green 苔绿色
+navy blue 藏青色, 深蓝色, 天蓝色
+off-white 灰白色
+olive green 橄榄绿
+oyster white 乳白色
+pansy 紫罗兰色
+pink 粉红色
+purple, violet 紫色
+red 红色
+salmon pink 橙红色
+sandy beige 浅褐色
+scarlet 绯红, 猩红
+shocking pink 鲜粉红色
+smoky gray 烟灰色
+snowy white 雪白色
+turquoise blue 土耳其玉色
+white 白色
+own 褐色, 茶色
+camel 驼色
+charcoal gray 炭灰色
+chocolate 红褐色, 赭石色
+cobalt blue 钴蓝色, 艳蓝色
+emerald green 鲜绿色,祖母绿
+gray 灰色
+green 绿色
+ivory 象牙色
+khaki 卡其色
+lavender 淡紫色, 熏衣草花
+lilac 浅紫色，丁香
+maroon 褐红色，栗色
+mauve 淡紫红
+misty gray 雾灰色
+moss green 苔绿色
+navy blue 藏青色, 深蓝色, 天蓝色 

@@ -1,0 +1,502 @@
+mint-UI
+	import MintUI from 'mint-ui'
+	import 'mint-ui/lib/style.css'
+	Vue.use(MintUI)
+YDUI
+	import YDUI from 'vue-ydui';
+	import 'vue-ydui/dist/ydui.rem.css';
+	Vue.use(YDUI);
+
+Element
+	import Vue from 'vue'
+	import ElementUI from 'element-ui'
+	import 'element-ui/lib/theme-chalk/index.css'
+	Vue.use(MintUI)
+
+JQ
+	import $ from 'jquery'
+
+VeeValidate
+	import VeeValidate, {Validator} from 'vee-validate'
+	import zh from 'vee-validate/dist/locale/zh_CN';//引入中文文件
+
+
+@import '.css';		引入CSS文件
+
+钩子
+el		作用域
+data 		信息
+data(){
+      return{
+        title:"哈哈哈"
+      }
+    }
+
+
+methods 	函数
+ methods:{
+    green:function () {
+      
+    }
+ }
+
+computed	计算属性
+
+components	局部组件
+components: {
+    Test,Users
+  }
+
+mounted		请求网络数据(getLocalData())
+mounted() {
+      this.changeIcon()
+}
+
+created		http请求
+created:function(){
+	this.$http.get("https://jsonplaceholder.typicode.com/users")
+		  .then(function(response){
+			this.users = response.data;
+		   })
+   }
+
+fillters	过滤
+
+props		通信
+props:{
+      msg:{
+        type:String,
+        default:"默认文字"
+      }
+    }
+
+指令
+v-once 执行一次性地插值，当数据改变时，插值处的内容不会更新。
+
+v-if指令  W条件渲染指令，根据表达式的真假来添加或删除元素。
+其语法结构是：v-if="expression"，其中expression是一个返回bool值的表达式，其结果可以是true或false，也可以是返回true或false的表达式。
+
+v-show指令也是条件渲染指令，不同的是有 v-show 的元素会始终渲染并保持在 DOM 中。和v-if指令不同点在于：v-show是根据表达式之真假值，切换元素的 display CSS 属性，当条件变化时该指令触发过渡效果。
+
+v-if 是真实的条件渲染，因为它会确保条件块在切换当中适当地销毁与重建条件块内的事件监听器和子组件； v-show 则只是简单地基于 CSS 切换。
+v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换使用 v-show 较好，如果在运行时条件不大可能改变则使用 v-if 较好。
+
+v-else指令
+可以用v-else指令为v-if或v-show添加一个“else块”。注意：v-else前一兄弟元素必须有 v-if 或 v-else-if。
+
+v-for指令 基于数据渲染一个列表，类似于JS中的遍历。其数据类型可以是 Array | Object | number | string。
+
+该指令之值，必须使用特定的语法(item, index) in items,  为当前遍历元素提供别名。 v-for的优先级别高于v-if之类的其他指令
+
+另外v-for也可以为数组索引指定别名（或者用于对象的键）：
+
+<div v-for="(item, index) in items"></div>
+<div v-for="(val, key) in object"></div>
+<div v-for="(val, key, index) in object"></div>
+ v-for 默认行为试着不改变整体，而是替换元素。迫使其重新排序的元素,您需要提供一个 key 的特殊属性:
+   
+   <div v-for="item in items" :key="item.id">
+    {{ item.text }}
+   </div>
+
+
+v-bind指令动态地绑定一个或多个特性，或一个组件 prop 到表达式。v-bind指令可以在其名称后面带一个参数，中间用一个冒号隔开。这个参数通常是HTML元素的特性（attribute），比如：
+  
+v-bind:src="imageSrc"  可以缩写： :src="imgaeSrc"
+
+:class="{ red: isRed }"  或  :class="[classA, classB]" ...
+<div v-bind:class="[class2,{class1: class1},{class3:class3}]">
+
+:style="{ fontSize: size + 'px' }"  或 :style="[styleObjectA, styleObjectB]" ...
+
+ 绑定一个有属性的对象，比如：v-bind="{ id: someProp, 'other-attr': otherProp }" 
+
+...
+  
+语法结构：v-bind:argument="expression"
+
+v-on指令 动态地绑定一个或多个特性，或一个组件 prop 到表达式；其作用和v-bind类似。注意：如果用在普通元素上时，只能监听 原生 DOM 事件；但是如果用在自定义元素组件上时，也可以监听子组件触发的自定义事件。
+  
+常用的修饰符包括：
+  
+ .stop - 调用 event.stopPropagation()；停止冒泡。
+    
+.prevent - 调用 event.preventDefault(); 停止监听原生事件。
+    
+.capture - 添加事件侦听器时使用 capture 模式。
+    
+ .self - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
+    
+ .{keyCode | keyAlias} - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
+    
+ .once - 触发一次。
+
+使用手法：
+<!-- 方法处理器 -->
+<button v-on:click="doThis"></button>
+<!-- 内联语句 -->
+<button v-on:click="doThat('hello', $event)"></button>
+<!-- 缩写 -->
+<button @click="doThis"></button>
+<!-- 停止冒泡 -->
+<button @click.stop="doThis"></button>
+<!-- 阻止默认行为 -->
+<button @click.prevent="doThis"></button>
+<!-- 阻止默认行为，没有表达式 -->
+<form @submit.prevent></form>
+<!--  串联修饰符 -->
+<button @click.stop.prevent="doThis"></button>
+<!-- 键修饰符，键别名 -->
+<input @keyup.enter="onEnter">
+<!-- 键修饰符，键代码 -->
+<input @keyup.13="onEnter">
+<!-- the click event will be triggered at most once -->
+<button v-on:click.once="doThis"></button>
+
+组件
+// 1.创建组件构造器
+        let Profile = Vue.extend({
+            // 1.1 模板选项
+            template: `
+                <div>
+                     <input type="date">
+                     <p>今天已经是冬天了!</p>
+                </div>
+                `
+        });
+
+        // 2. 注册一个全局的组件
+        Vue.component('my-date', Profile);
+
+局部组件
+ // 1.创建组件构造器
+        let Profile = Vue.extend({
+            // 1.1 模板选项
+            template: `
+                <div>
+                     <input type="date">
+                     <p>今天已经是冬天了!</p>
+                </div>
+                `
+        });
+
+ new Vue({
+           el: '#app',
+           components: {
+               'my-date': Profile,
+           }
+        });
+
+父子组件
+// 1. 子组件构造器
+        let Child1 = Vue.extend({
+            template: `<img src="img/img_01.jpg" width="200">`
+        });
+
+        let Child2 = Vue.extend({
+            template: `<p>我认为自己很美!</p>`
+        });
+
+        Vue.component('child', Child1);
+
+// 2. 父组件构造器
+        Vue.component('parent', {
+            components: {
+                'my-child1': Child1,
+                'my-child2': Child2
+            },
+            template:
+                `
+                  <div>
+                      <my-child1></my-child1>
+                      <my-child2></my-child2>
+                  </div>
+                `
+        });
+
+
+template标签
+<template id="my_div">
+        <div>
+            <div>我是MT!</div>
+            <input type="date">
+            <img src="img/img_02.jpg" alt="" width="400">
+        </div>
+</template>
+
+
+        // 1. 实例化组件
+        Vue.component('my-div', {
+            template: '#my_div'
+        });
+
+script标签和template标签方法一样 只是需在标签后面加上type="text/template"
+<script type="text/template" id="my_div">
+
+组件间的通信 父组件通过 props 向下传递数据给子组件，子组件通过 events 给父组件发送消息
+<my-div message="今天要下雨" imgsrc="img/img_02.jpg"></my-div>
+
+ <template id="my_div">
+        <div>
+            <h1>{{message}}</h1>
+            <img :src="imgsrc" width="200" alt="">
+        </div>
+    </template>
+
+ // 1. 创建组件
+        Vue.component('my-div', {
+            template: '#my_div',
+            props: ['message', 'imgsrc']
+        });
+
+
+solt 实名插槽和匿名插槽
+实名插槽 slot="名称" 必须写
+
+父子组件之间相互访问
+
+       
+在开发中，组件之间需要相互访问。比如：父组件访问子组件，子组件访问父组件，或者是子组件访问根组件。
+
+针对这种情况，Vue.js提供了以下API:
+
+父组件访问子组件：使用$children或$refs  (一个对象，其中包含了所有拥有 ref 注册的子组件)
+  
+子组件访问父组件：使用$parent
+  
+子组件访问根组件：使用$root 
+
+
+
+// 1. 请求本地的数据
+        getLocalData() {
+            this.$http.get('data/cart.json').then(response => {
+                const res = response.body;
+                if(res){
+                    this.shopListArr = res.allShops.shopList;
+                    console.log(this.shopListArr);
+                }
+            }, response => {
+                alert('请求数据失败!');
+            });
+        },
+
+
+vm.$set( target, key, value )
+
+参数：
+
+{Object | Array} target
+{string | number} key
+{any} value
+返回值：设置的值。
+
+
+
+1，父组件向子组件传递场景：Father上一个输入框，根据输入传递到Child组件上。
+
+父组件：
+<template>
+  <div>
+    <input type="text" v-model="msg">
+    <br>
+    //将子控件属性inputValue与父组件msg属性绑定
+    <child :inputValue="msg"></child>
+  </div>
+</template>
+
+<script>
+  export default{
+    data(){
+      return {
+        msg: '请输入'
+      }
+    },
+    components: {
+      child: require('./Child.vue')
+    }
+  }
+</script
+
+子组件：
+<template>
+  <div>
+    <p>{{inputValue}}</p>
+  </div>
+</template>
+<style>
+
+</style>
+<script>
+    export default{
+        props: {
+          inputValue: String
+        }
+    }
+</script>
+
+2，子组件向父组件传值场景：子组件上输入框，输入值改变后父组件监听到，弹出弹框
+
+ 父组件：
+<template>
+  <div>
+//message为子控件上绑定的通知；recieveMessage为父组件监听到后的方法
+    <child2 v-on:message="recieveMessage"></child2>
+  </div>
+</template>
+<script>
+  import {Toast} from 'mint-ui'
+  export default{
+    components: {
+      child2: require('./Child2.vue'),
+      Toast
+    },
+    methods: {
+      recieveMessage: function (text) {
+        Toast('监听到子组件变化'+text);
+      }
+    }
+  }
+</script>
+
+子组件：
+<template>
+  <div>
+    <input type="text" v-model="msg" @change="onInput">
+  </div>
+</template>
+<script>
+  export default{
+    data(){
+      return {
+        msg: '请输入值'
+      }
+    },
+    methods: {
+      onInput: function () {
+        if (this.msg.trim()) {
+          this.$emit('message', this.msg);
+        }
+      }
+    }
+  }
+</script>
+
+
+
+路由
+
+引入
+import VueRouter from 'vue-router'
+
+引入页面
+import index from './components/index/index.vue'
+
+挂载组件
+Vue.use(VueRouter)
+
+ // 设置路由
+const router = new VueRouter({
+  mode:'history',
+  base:__dirname,
+  routes:[
+    {path:"/",component:index},
+    {path:"/artist",component:artist},
+    {path:"/project",component:project},
+    {path:"/my",component:my},
+  ]
+})
+
+实例化 挂载APP
+
+new Vue({
+  router,
+  template: `
+	<div id="app">
+		<ul class="foot">
+			<li>
+				<router-link to="/"></router-link>
+			</li>
+		</ul>
+		<router-view></router-view>
+	</div>
+  `
+}).$mount("#app")
+
+路由传值
+显示在URL
+{ path: "/game/:num", component: game }  
+<router-link to="/game/123">  
+this.$route.params.num
+不显示在URL
+{ name: "game1", path: "/home/game/", component: game }  
+<router-link :to="{ name:'game1', params: {num: 123} }">  
+
+函数跳转
+ this.$router.go('/login');
+
+VeeValidate
+after{target} 			- 比target要大的一个合法日期，格式(DD/MM/YYYY)
+
+alpha 				- 只包含英文字符
+
+alpha_dash 			- 可以包含英文、数字、下划线、破折号
+
+alpha_num 			- 可以包含英文和数字
+
+before:{target} 		- 和after相反
+
+between:{min},{max} 		- 在min和max之间的数字
+
+confirmed:{target} 		- 必须和target一样
+d
+ate_between:{min,max} 		- 日期在min和max之间
+
+date_format:{format} 		- 合法的format格式化日期
+
+decimal:{decimals?}		 - 数字，而且是decimals进制
+
+digits:{length} 		- 长度为length的数字
+
+dimensions:{width},{height} 	- 符合宽高规定的图片
+
+email 				- 邮箱
+ext:[extensions] 		- 后缀名
+
+image 				- 图片
+
+in:[list]			- 包含在数组list内的值
+
+ip				 - ipv4地址
+
+max:{length} 			- 最大长度为length的字符
+
+mimes:[list] 			- 文件类型
+
+min 				- max相反
+
+mot_in 				- in相反
+
+numeric 			- 只允许数字
+
+regex:{pattern} 		- 值必须符合正则
+pattern
+required			 - 模式要求
+size:{kb} 			- 文件大小不超过
+
+url:{domain?} 			- (指定域名的)url
+
+
+
+ref
+	<phone ref="phone"></phone>
+ 	this.$refs.phone.phone
+
+
+
+
+
+
+
+
+

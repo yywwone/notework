@@ -1,0 +1,44 @@
+cnpm    npm install -g cnpm --registry=http://registry.npm.taobao.org
+
+安装vue-cli脚手架构建工具	cnpm install -g vue-cli
+
+
+用vue-cli构建项目	vue init webpack firstVue 
+
+安装项目所需的依赖	cnpm install 
+
+卸载			uninstall
+
+热加载			cnpm run dev
+
+JQ		cnpm install jquery --save-dev	
+
+Mint UI		cnpm i mint-ui -S --save-dev
+YDUI		cnpm install vue-ydui --save
+
+element-logo	npm i element-ui -S
+
+路由		cnpm install vue-router --save-dev
+
+resource	cnpm install vue-resource --save-dev
+
+VeeValidate 	cnpm install vee-validate@next --save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

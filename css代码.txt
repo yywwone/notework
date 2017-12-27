@@ -1,0 +1,479 @@
+RCSS外部引用  <link href="文件名" type="text/css" rel="stylesheet">
+
+CSS内部标签 style对(一定要在head内)
+@charset "utf-8";  保存.css格式
+*{padding: 0;margin: 0;text-decoration:none;list-style: none;font-family: 微软雅黑;outline: none;box-sizing: border-box;}
+a:focus{outline: none;-moz-outline-style: none; }A标签点击时隐藏虚线框
+input:focus{outline: none;}表单获得焦点时不显示蓝色框
+img{border}图片边框线隐藏
+<a href="#" hidefocus="true"></a> 兼容模式A标签点击时隐藏虚线框
+behavior: url(http://localhost/wgift/resource/css/ie-css3.htc); 确认刷新
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }   苹果手机提交按钮颜色不正确
+	
+nth-of-type()	选择第几个元素
+
+-moz-		对应 Firefox, 
+-webkit-	对应 Safari and Chrome
+-o- 		对应 Opera
+-ms- 		对应 Internet Explorer
+
+body{zoom: 200%} 屏幕缩放比例
+
+
+
+overflow: hidden; 子级浮动后 父级不崩塌F
+content: " ";     防止崩塌
+
+clear:both   独占一行 不管有没有浮动
+
+font-weight: normal 去除粗体
+*focus{outline:none} 去除获得焦点默认边框
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 16px;  
+    height: 16px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #555;  
+}  
+
+/*css document*/   css文件注释写法
+
+文字字号 font-size:XXX;(一定要双引结束)
+
+背景颜色 background-color:XXX;(一定要双引结束)
+字体颜色   color:
+
+ID选择器    #名字{内容;} id="名字"
+class选择器 .名字{内容;} class="名字"
+子代选择器  父代名字 子代名字{内容}
+群组选择器 <style>  xx,xx,xx,xx,{}</style>
+
+word-break:break-all 	段落换行 直接换行
+word-wrap:break-word	段落换行 尾部有链接或单词不够一行直接换行
+
+修饰        text-decoration:
+
+顶划线      overline
+删除线      line-through
+下划线      underline
+字体斜体   font-style:italic
+字体不斜体 font-style: normal
+去除      ｛text-decoration: none;｝
+
+字体类型   font-family
+字体粗细    font-weight   bold相当于700
+字体大小   font-size 
+字体颜色   color
+-webkit-writing-mode:vertical-lr;文字从上到下 从左到右
+writing-mode:tb-lr;
+writing-mode:vertical-lr;
+
+
+overflow: hidden;		/*内容超出后隐藏*/
+
+文本超出部分显示省略号
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+display:-webkit-box;
+
+-webkit-line-clamp: 3;
+
+-webkit-box-orient: vertical;
+
+text-overflow:clip		修剪文本。
+white-space: nowrap;		/*文本不进行换行*/
+word-wrap:break-word ;		强制换行
+值			描述
+normal		默认。空白会被浏览器忽略。
+pre		空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+nowrap		文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+pre-wrap	保留空白符序列，但是正常地进行换行。
+pre-line	合并空白符序列，但是保留换行符。
+inherit		规定应该从父元素继承 white-space 属性的值。
+
+
+
+text-indent:数值     段落首行缩进
+vertical-align：     文本垂直对齐
+letter-spacing:数值  文字间隔
+word-spacing:数值    文字间隔
+
+top      顶部对齐
+middle   中部对齐
+baseline 基线对齐
+bottom   底部对齐
+
+
+text-align属性只能针对文本文字和img标签，对其他标签无效。只能给父级添加，不能对当前级添加
+text-align:属性值 水平对齐方式
+默认值左对齐  left	
+居中对齐      center	
+右对齐        right
+两端对齐      justify
+	
+行高      line-height
+浮动      float:
+
+
+背景图片 background-image:url(地址);
+背景显示方式 background-repeat
+no-repeat	表示不平铺
+repeat	默认值，表示在水平方向（x轴）和垂直方向（y轴）同时平铺
+repeat-x	表示在水平方向（x轴）平铺
+repeat-y	表示在垂直方向（y轴）平铺
+
+背景显示位置 background-position:x轴 Y轴
+top left	左上
+top center	靠上居中
+top right	右上
+left center	靠左居中
+center center	正中
+right center	靠右居中
+bottom left	左下
+bottom center	靠下居中
+bottom right	右下
+
+text-align: 属性值;  图片文字水平对齐
+left默认值  左对齐
+center	    居中对齐
+right	    右对齐
+
+背景是否滚动 background-attachment
+scroll 滚动 
+fixed  固定
+background-size: 
+100% 100%; 	以父元素的大小比例
+100px 100px 	规定图片大小
+cover		背景图随着拉伸改变
+contain 	容器最大尺寸
+
+border-width	边框的宽度
+
+border-style	边框的外观
+none	无样式
+hidden	与“none”相同。hidden用于解决边框冲突。
+solid	实线
+dashed	虚线
+dotted	点线
+double	双线，双线的宽度等于border-width值
+groove  槽线边框
+ridge   脊线边框
+inset   内嵌边框
+outset  凸起边框
+
+图片边框
+border-width:像素值;
+border-style:属性值;
+border-color:颜色值;
+border简洁写法，如“border:大小 属性 颜色”。
+border-radius:数值  边框角度
+border-collapse:collapse  表格相邻边框像素为1
+
+outline-offset 属性对轮廓进行偏移，并在边框边缘进行绘制。
+
+div
+{
+border:2px solid black;
+outline:2px solid red;
+outline-offset:15px;
+}
+
+文字环绕float
+left	      元素向左浮动
+right	      元素向右浮动
+clear:both    清除浮动
+
+
+
+ul,ol{list-style:none}      去除列表点
+list-style-type: disc;      恢复列表点
+a{text-decoration:none}     去除A标签下划线
+text-decoration:underline;  恢复A标签下划线
+*{padding: :0;margin: 0;}   清除所有边距
+outline:none                去除input，textarea文本边框
+outline:1px solid #fcc      恢复边框
+
+list-style-image:url(地址)} 自定义列表项样式
+border-spacing: 水平数值 垂直数值
+
+
+a:link	    定义a元素未访问时的样式
+a:visited   定义a元素访问后的样式
+a:hover	    定义鼠标经过显示的样式
+a:active    定义鼠标单击激活时的样式
+a:focus{outline: none;-moz-outline-style: none; }A标签点击时隐藏虚线框
+<a href="#" hidefocus="true"></a> 兼容模式A标签点击时隐藏虚线框
+
+<a href="文件名.html"></a>   本页刷新
+
+伪元素
+::selection 选择器匹配被用户选取的选取是部分。
+只能向 ::selection 选择器应用少量 CSS 属性：color、background、cursor 以及 outline。
+:before	在元素之前添加内容。
+:after	在元素之后添加内容。
+举例:h1:after {content:url(/i/w3school_logo_white.gif)}content写添加内容 不添加文字需写' '(分号中间有空格)
+
+
+每个元素都看成一个盒子，盒子模型是由content（内容）、padding（内边距）、margin（外边距）和border（边框）这四个属性组成的。此外，在盒子模型中，还有宽度width和高度height两大辅助性属性。
+记住，所有的元素都可以看做一个盒子！
+
+
+margin  外边距
+padding 内边距
+top    上 
+right  右
+bottom 下
+left  左
+
+position:fixed;    固定定位
+position:relative; 相对定位
+position:absolute; 绝对定位
+z-index:数值       前后距离(必须配合定位属性使用)
+position: static;  清除定位
+
+行内样式＞（内部样式=外部样式）
+行内样式优先级最高，内部与外部优先级相同。如果内部样式与外部样式同时存在，则以最后引入的样式为准。
+
+选择器           权值
+通配符            0
+伪元素            1
+class选择器       10
+伪类              10
+属性选择器        100
+行内样式          1000
+
+行内样式style=“”+ID选择器 + 类选择器+元素选择器
+  1000              100        10           1
+选择器优先级如下：
+行内样式＞ID选择器＞CSS选择器＞元素选择器
+
+CSS 优先级法则：
+A  选择器都有一个权值，权值越大越优先；
+B  当权值相等时，后出现的样式表设置要优于先出现的样式表设置；（所谓的覆盖就是这样得来的）
+C  创作者的规则高于浏览者：即网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式；
+D  继承的CSS 样式不如后来指定的CSS 样式；
+
+{ ！important;}最高权限
+
+总而言之，对于CSS优先级，主要就是一下两个黄金规律。
+1，优先级高的样式覆盖优先级低的样式。
+2，同一优先级的样式，后定义的覆盖先定义的，那就是后来者居上咯~
+
+margin: 0 auto; 上下0 左右自动居中
+overflow: hidden; 子级浮动后 父级不崩塌
+
+
+{width: 0;height: 0;border-left: 7px solid transparent;border-right: 7px solid transparent;border-top: 7px solid  #286bbb;}边框下三角
+
+跳色 :nth-child(odd)
+
+
+垂直居中
+父级相对定位position: relative;
+子级绝对定位position: absolute;
+上左50%
+margin-top高度除以2
+margin-left宽度除以2
+
+display
+inline       行内元素
+block        块元素
+inline-block 行内块元素
+table        以表格形式显示
+table-row    以表格行形式显示，类似于TR
+table-cell   以单元格形式显示，类似于td
+none         隐藏元素(隐藏不占据位置)
+
+visibility:hidden 标签隐藏(隐藏占据位置)
+
+图片垂直居中于元素
+语法：
+     父元素{ display:table-cell;Vertical-align:middle;}
+     子元素{ vertical-align:middle;}
+
+vertical-align:
+top（顶对齐）、middle（中部对齐）、baseline（基线对齐）、bottom（底线对齐）。
+vertical-align:text-bottom;把元素的顶端与父元素字体的顶端对齐
+
+
+自动平均划分
+
+语法：父元素{display:table;}
+      子元素{display:table-cell;}
+background: rgba(0,0,0,0.5);背景透明(括号内前三个是rgb颜色数值 最后一个是透明0.1-0.9)
+opacity: 数值(0.1-1) 全局透明
+-moz-opacity:数值(0.1-1) 
+filter:alpha(opacity=数值(1-100))浏览器兼容
+transparent 透明
+边框三角号宽高0  两个方向透明 目标方向对面加颜色
+
+
+线性渐变
+background: linear-gradient(red, blue);							从上到下
+background: linear-gradient(to right, red , blue);					从左到右
+background: linear-gradient(to bottom right, red , blue);				从左上角到右下角的线性渐变：
+background: linear-gradient(180deg, red, blue);						带有指定的角度的线性渐变：
+background: linear-gradient(red, green, blue);						带有多个颜色结点的从上到下的线性渐变：
+background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 	彩虹
+background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));		从左到右的线性渐变，带有透明度：
+background: repeating-linear-gradient(red, yellow 10%, green 20%);			重复的线性渐变
+
+径向渐变
+background: radial-gradient(red, green, blue);						颜色结点均匀分布的径向渐变：
+background: radial-gradient(red 5%, green 15%, blue 60%);				颜色结点不均匀分布的径向渐变：
+background: radial-gradient(circle, red, yellow, green);				形状为圆形的径向渐变：
+
+阴影：box-shadow:右侧水平 右侧垂直 浓度 颜色,左侧水平 左侧垂直 浓度 颜色
+举例：box-shadow:5px 5px 50px #fcc,-5px 5px 50px #fcc
+
+倒影box-reflect
+above:表示生成的倒影在对象（原图）的上方；
+below:表示生成的倒影在对象（原图）的下方；
+left:表示生成的倒影在对象(原图)的左侧；
+right:表示生成的倒影在对象(原图)的右侧；
+box-reflect:倒影位置 举例 遮罩样式（渐变/图片）
+举例:box-reflect: below 0px url(http://cdn.w3cplus.com/sites/default/files/blogs/2014/1405/css-masking.png);
+
+动画例子
+div
+{
+animation: myfirst 5s linear 2s infinite alternate;	名称 5秒完成 匀速 延时2秒 无限循环 结束后反相播放
+animation-fill-mode:forwards;					停留在最后的样式
+
+
+}
+
+@keyframes myfirst		定义动画 
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+
+from{}to{}
+
+*{transition: all 0.5s ease 0s;}动画内的所有变化0.5秒完成 不延时
+
+transition 将一个元素逐渐变成另一个元素
+
+div{width:100px;transition:width 2s;}div:hover{width:300px;} 元素在2秒内宽度从100变为300
+
+
+动画多个属性之间用空格隔开
+举例transform:rotateZ(180deg) translateX(50px) scale(1.5,1.5) 水平旋转180度 横向移动50px 放大1.5倍
+
+旋转rotate
+水平旋转   transform:rotateX(数值角度)  //deg:角度
+垂直旋转   transform:rotateY(数值角度)
+上下旋转   transform:rotateZ(数值角度)
+举例:	   transform:rotateZ(180deg)
+
+transform-origin	是变形原点，也就是该元素围绕着那个点变形或旋转，该属性只有在设置了transform属性的时候起作用；
+
+缩放scale
+transform:scale(X,Y)水平垂直缩放
+举例transform:scale(1.5,1.5)水平和垂直都放大1.5倍
+
+扭曲skew
+transform:skewX()
+transform:skewy()
+举例transform:skewX(30deg)
+
+移动translate
+水平移动   transform: translateX(数值)
+垂直移动   transform: translateY(数值)
+举例:	   transform: translateX(50px)
+overflow
+visible 默认值，若内容溢出，则溢出内容可见
+hidden  若内容溢出，则溢出内容隐藏
+scroll  若内容溢出，则显示滚动条
+auto    auto跟scroll很像，不同的是auto值在盒子需要时给她一个滚动条
+
+元素：not{名字}除了当前元素之外的所有元素修饰
+
+
+给元素父级添加font-size:0; 可以消除li img input间距
+
+last-child  最后一个元素
+
+
+pointer-events: none;		遮罩层可以点击遮罩元素
+
+box-sizing: border-box;	可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。
+box-sizing: content-box;默认样式
+
+媒体查询
+
+@media screen and (max-width: 800px)
+
+@media screen and (min-width: 800px)
+
+去除type=number上下箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield!important
+}
+
+表单placeholder 字体颜色
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff; opacity:1; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #fff;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #fff;opacity:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
